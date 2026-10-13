@@ -7,12 +7,15 @@ let currentUser = null;
 
 // Fungsi Utama untuk menembak ke Google Sheets
 async function apiCall(data) {
-    if(SCRIPT_URL === "https://script.google.com/macros/s/AKfycbx2jrFeiEGcFgfrfrTblOqpcbeEGZDr7MElk1WxcNee/dev") {
+    if (SCRIPT_URL === "https://script.google.com/macros/s/AKfycbx2jrFeiEGcFgfrfrTblOqpcbeEGZDr7MElk1WxcNee/dev") {
         return { success: false, message: "ERROR: SCRIPT_URL di script.js belum diisi!" };
     }
     try {
         const response = await fetch(SCRIPT_URL, {
             method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
             body: JSON.stringify(data)
         });
         return await response.json();
