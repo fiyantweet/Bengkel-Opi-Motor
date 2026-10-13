@@ -1,13 +1,13 @@
 // =================================================================================
 // 1. MASUKKAN URL APLIKASI WEB GOOGLE APPS SCRIPT ANDA DI BAWAH INI:
-const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxByNdFPylB8QJycBj2azbYh70aTI1-praZ1Lcr1FudmAZ9SXNPjmHHldznGu6BmbCI4g/exec";
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbx2jrFeiEGcFgfrfrTblOqpcbeEGZDr7MElk1WxcNee/dev";
 // =================================================================================
 
 let currentUser = null;
 
 // Fungsi Utama untuk menembak ke Google Sheets
 async function apiCall(data) {
-    if(SCRIPT_URL === "https://script.google.com/macros/s/AKfycbxByNdFPylB8QJycBj2azbYh70aTI1-praZ1Lcr1FudmAZ9SXNPjmHHldznGu6BmbCI4g/exec") {
+    if(SCRIPT_URL === "https://script.google.com/macros/s/AKfycbx2jrFeiEGcFgfrfrTblOqpcbeEGZDr7MElk1WxcNee/dev") {
         return { success: false, message: "ERROR: SCRIPT_URL di script.js belum diisi!" };
     }
     try {
