@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Opi Motor - Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="dynamic-wallpaper" class="wallpaper-bg"></div>
+
+    <!-- Halaman Login -->
+    <div id="login-section" class="container">
+        <div class="card login-card">
+            <h2>Login Bengkel Opi Motor</h2>
+            <p style="text-align: center; margin-bottom: 15px; color: #666; font-size:14px;">Gunakan akun admin default untuk pertama kali.</p>
+            <input type="text" id="username" placeholder="Username (contoh: admin)">
+            <input type="password" id="password" placeholder="Password (contoh: admin123)">
+            <button id="btn-login" onclick="handleLogin()">Masuk</button>
+        </div>
+    </div>
+
+    <!-- Halaman 2FA -->
+    <div id="twofa-section" class="container hidden">
+        <div class="card login-card">
+            <h2>Verifikasi 2FA</h2>
+            <p>Masukkan PIN keamanan Anda (Default: 123456).</p>
+            <input type="password" id="twofa-pin" placeholder="PIN 2FA" maxlength="6">
+            <button id="btn-2fa" onclick="verify2FA()">Verifikasi</button>
+            <button onclick="cancelLogin()" class="btn-danger">Batal</button>
+        </div>
+    </div>
+
+    <!-- Dashboard Utama -->
+    <div id="dashboard-section" class="dashboard hidden">
+        <aside class="sidebar">
+            <h2 style="color:white; text-align:center; margin-bottom: 20px;">Opi Motor</h2>
+            <nav>
+                <a href="#">🏠 Dashboard Aktif</a>
+            </nav>
+            <div class="sidebar-footer">
+                <button onclick="logout()" class="btn-danger" style="margin-top: 10px; width: 100%;">Logout</button>
+            </div>
+        </aside>
+
+        <main class="content">
+            <div class="tab-content active">
+                <h2>Selamat Datang di Bengkel Opi Motor!</h2>
+                <div class="card" style="margin-top: 20px;">
+                    <h3>Info Sistem:</h3>
+                    <p>✅ Database Google Sheets: <b>Terhubung</b></p>
+                    <p>✅ Storage Google Drive: <b>Terhubung</b></p>
+                    <p>Anda telah berhasil masuk menggunakan sistem backend baru tanpa Supabase.</p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
